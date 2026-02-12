@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest-green: #2D5A27;
+  --color-water-blue: #E0F7FA;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
+}
+
+/* Force apply styles if Tailwind utilities deviate */
+@layer components {
+  .bg-forest-green {
+    background-color: var(--color-forest-green);
+  }
+
+  .text-forest-green {
+    color: var(--color-forest-green);
+  }
+
+  .bg-water-blue {
+    background-color: var(--color-water-blue);
+  }
+}
