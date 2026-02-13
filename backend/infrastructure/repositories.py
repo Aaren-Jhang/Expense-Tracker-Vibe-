@@ -36,8 +36,10 @@ class TransactionRepository:
     def get_by_month(self, year: int, month: int) -> list[Transaction]:
         start_date = date(year, month, 1)
         # Simple logic: get all transactions after start of month.
-        # For strict month end, we'd need end_date logic, but ">= start_date" is sufficient for "current month so far" usually.
-        # But to be precise let's just filter >= start_date for now as per original requirement.
+        # For strict month end, we'd need end_date logic, but ">= start_date" is
+        # sufficient for "current month so far" usually.
+        # But to be precise let's just filter >= start_date for now as per original
+        # requirement.
         transactions = (
             self.db.query(TransactionDB).filter(TransactionDB.date >= start_date).all()
         )

@@ -14,10 +14,10 @@ sys.path.append(os.getcwd())
 load_dotenv()
 
 # Import all models so they are registered in Base.metadata
-from domain import models
+from domain import models  # noqa: F401, E402
 
 # Import Base from your application
-from infrastructure.orm import Base
+from infrastructure.orm import Base  # noqa: E402
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
